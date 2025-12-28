@@ -4,15 +4,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(120deg, #1e3c72, #2a5298);
     color: white;
+    overflow-x: hidden;
 }
 
-header {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-header h1 {
-    font-size: 3rem;
+/* Fade-in sections */
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 section {
@@ -22,24 +20,32 @@ section {
     color: #333;
     padding: 40px;
     border-radius: 12px;
+    animation: fadeSlideIn 1s ease-out forwards;
 }
 
-.profile {
-    text-align: center;
-}
-
+/* Profile image animation */
 .profile img {
     width: 180px;
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
+    animation: fadeSlideIn 1.2s ease-out forwards;
 }
 
-h2 {
-    color: #1e3c72;
+/* Header animation */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    animation: fadeSlideIn 1s ease-out forwards;
 }
 
+header h1 {
+    font-size: 3rem;
+    animation: fadeSlideIn 1.5s ease-out forwards;
+}
+
+/* Button hover effect */
 button {
     padding: 10px 20px;
     background: #1e3c72;
@@ -47,10 +53,12 @@ button {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
     background: #2a5298;
+    transform: scale(1.1);
 }
 
 a {
@@ -69,78 +77,9 @@ footer {
     opacity: 0.8;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     header h1 { font-size: 2rem; }
     .profile img { width: 120px; height: 120px; }
     section { padding: 20px; margin: 10px auto; }
-}
-
-header {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-header h1 {
-    font-size: 3rem;
-}
-
-section {
-    max-width: 900px;
-    margin: 20px auto;
-    background: white;
-    color: #333;
-    padding: 40px;
-    border-radius: 12px;
-}
-
-.profile {
-    text-align: center;
-}
-
-.profile img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #1e3c72;
-}
-
-button {
-    padding: 10px 20px;
-    background: #1e3c72;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #2a5298;
-}
-
-a {
-    color: #1e3c72;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-@media (max-width: 768px) {s
-    header h1 { font-size: 2rem; }
-    .profile img { width: 120px; height: 120px; }
-    section { padding: 20px; margin: 10px auto; }
-
 }
